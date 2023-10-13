@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h2>Edit Engineer</h2>
+<hr/>
+
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Experience, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<h4>Edit this engineer: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Experience)
+  @Html.EditorFor(model => model.Experience)
+
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to Engineer List", "Index")</p>
