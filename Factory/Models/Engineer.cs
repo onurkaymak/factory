@@ -13,7 +13,6 @@ namespace Factory.Models
     [RegularExpression("^[a-zA-Z][a-zA-Z0-9]*$", ErrorMessage = "The engineer's name can't be empty and it can only be alphabetic!")]
     public string Name { get; set; }
 
-    // [Required(ErrorMessage = "Please provide an experience level! ('Beginner', 'Intermediate', 'Expert')")] // validation attribute for Experience.
     [Required]
     [RegularExpression("Beginner|Intermediate|Expert", ErrorMessage = "Please provide an experience level, it can be one of the three level ('Beginner', 'Intermediate', 'Expert').")]
     public string Experience { get; set; }
