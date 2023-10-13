@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using Factory.Models
 @model Factory.Models.Machine
 
 <h2>Machine Details</h2>
@@ -9,5 +10,26 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.RepairDifficulty): @Html.DisplayFor(model => model.RepairDifficulty)</h3>
 
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This machine has not been assigned to be repaired by an engineer yet.</p>
+}
+else
+{
+  <h4>This machine has been assigned to be repaired by the following engineers:</h4>
+  <ul>
+    @foreach(Repair join in Model.JoinEntities)
+    {
+      <li>Machine: @join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteJoin", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.RepairId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+
 <p>@Html.ActionLink("Back to Machine List", "Index")</p>
+<p>@Html.ActionLink("Assign Repair to Machine", "AddEngineer", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
