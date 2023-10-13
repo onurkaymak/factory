@@ -81,7 +81,7 @@ namespace Factory.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
-      _db.Items.Remove(thisEngineer);
+      _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
