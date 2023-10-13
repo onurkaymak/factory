@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+
+<h1>Factory Admin Panel</h1>
+
+<hr />
+
+<h4>Engineers</h4>
+@if (Model.Length == 0)
+{
+  <p>No engineers have been added yet!</p>
+} 
+<ul>
+  @foreach (Engineer engineer in Model)
+  {
+    <li>@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId})</li>
+  }
+</ul>
+
+<hr />
+
+<p>@Html.ActionLink("Manage Engineers", "Index", "Engineers")</p> 
