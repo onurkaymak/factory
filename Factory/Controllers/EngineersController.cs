@@ -95,5 +95,19 @@ namespace Factory.Controllers
       return View(thisEngineer);
     }
 
+    [HttpPost]
+    public ActionResult AddMachine(Engineer engineer, int machineId)
+    {
+#nullable enable
+      Repair? joinEntity = _db.Repairs.FirstOrDefault(join => (join.MachineId == machineId && join.EngineerId == engineer.EngineerId));
+#nullable disable
+      if (joinEntity == null && machineId != 0)
+      {
+        _db.Repairs.Add(new Repair() { MachineId = machineId, EngineerId = engineer.EngineerId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = engineer.EngineerId });
+    }
+
   }
 }
