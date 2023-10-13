@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using Factory.Models
 @model Factory.Models.Engineer
 
 <h2>Engineer Details</h2>
@@ -9,6 +10,23 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Experience): @Html.DisplayFor(model => model.Experience)</h3>
 
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This engineer is not assigned to repair any machine yet.</p>
+}
+else
+{
+  <h4>This engineer has been assigned to repair the following machines:</h4>
+  <ul>
+    @foreach(Repair join in Model.JoinEntities)
+    {
+      <li>Machine: @join.Machine.Name</li>
+    }
+  </ul>
+}
+
+
 <p>@Html.ActionLink("Back to Engineer List", "Index")</p>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Assign Repair to Engineer", "AddTag", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
