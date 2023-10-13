@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Machine Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.RepairDifficulty): @Html.DisplayFor(model => model.RepairDifficulty)</h3>
+
+<p>@Html.ActionLink("Back to Machine List", "Index")</p>
