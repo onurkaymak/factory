@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Factory.Models
@@ -11,5 +12,7 @@ namespace Factory.Models
 
     [Required(ErrorMessage = "Please provide an experience level! ('Beginner', 'Intermediate', 'Expert')")] // validation attribute for Experience.
     public string Experience { get; set; }
+
+    public List<Repair> JoinEntities { get; } // collection navigation property.
   }
 }

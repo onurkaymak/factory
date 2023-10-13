@@ -32,7 +32,7 @@ namespace Factory.Migrations
 
                     b.HasKey("EngineerId");
 
-                    b.ToTable("Engineers");
+                    b.ToTable("Engineers", (string)null);
                 });
 
             modelBuilder.Entity("Factory.Models.Machine", b =>
@@ -49,7 +49,7 @@ namespace Factory.Migrations
 
                     b.HasKey("MachineId");
 
-                    b.ToTable("Machines");
+                    b.ToTable("Machines", (string)null);
                 });
 #pragma warning restore 612, 618
         }
