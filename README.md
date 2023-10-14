@@ -53,11 +53,9 @@ An independent C# / ASP .NET project assignment for [Epicodus](https://www.epico
 
 ### Creating the Database from Migrations
 
-- After configuring your `appsettings.json`, you can create your database with migrations.
-
 - Type `$ dotnet tool install --global dotnet-ef --version 6.0.0` to install a tool for Entity Framework Core, this tool allows us to create migrations and update our database. (This will install the EF Core migration tool globally in your machine.)
 
-- To create your database by migrations navigate into `Factory` directory from root directory, type `dotnet ef database update` to create a database in your MySQL with your MySQL credentials that you provided in `appsettings.json` file.
+- To create your database by migrations, navigate into `Factory` directory from root directory, type `dotnet ef database update` to create a database in your MySQL with your MySQL credentials that you provided in `appsettings.json` file.
 
 ### Run the Application
 
