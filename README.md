@@ -18,7 +18,7 @@
 
 ## Description
 
-An independent C# / ASP .NET project assignment for [Epicodus](https://www.epicodus.com/), project is about "Database Many-To-Many Relationships / MySQL".
+An independent C# / ASP .NET project assignment for [Epicodus](https://www.epicodus.com/), project is about "Many-To-Many Relationships in MySQL".
 
 ## Important - This project requires
 
@@ -55,11 +55,13 @@ An independent C# / ASP .NET project assignment for [Epicodus](https://www.epico
 
 - After configuring your `appsettings.json`, you can create your database with migrations.
 
-- To create your database by migrations, simply type `dotnet ef database update`, this will create a database in your MySQL with your MySQL credentials that you provided in `appsettings.json` file. Also it will create
+- Type `$ dotnet tool install --global dotnet-ef --version 6.0.0` to install a tool for Entity Framework Core, this tool allows us to create migrations and update our database. (This will install the EF Core migration tool globally in your machine.)
 
-### Important - Complete the "Importing the Database" instructions before execute this application successfully.
+- To create your database by migrations navigate into `Factory` directory from root directory, type `dotnet ef database update` to create a database in your MySQL with your MySQL credentials that you provided in `appsettings.json` file.
 
-- Type `$ dotnet run` in the terminal command line to compile and execute this application while in HairSalon directory (Not the root directory HairSalon.Solution).
+### Run the Application
+
+- Type `$ dotnet run` in the terminal command line to compile and execute this application while in Factory directory (Not the root directory Factory.Solution).
 
 - IMPORTANT: `$ dotnet run` compiles the project folders for you without needing `$ dotnet build` command, however you can still use `$ dotnet build` if you need to compile the folders without executing the application.
 
