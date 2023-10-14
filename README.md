@@ -1,8 +1,8 @@
 # Dr. Sillystringz's Factory
 
-#### An ASP.NET Core MVC factory admin panel application to create maintenance orders between engineers and machines.
+#### An ASP.NET Core MVC factory admin panel application to create repair orders between engineers and machines.
 
-#### The factory management is be able to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines.
+#### The factory management is able to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines.
 
 #### By [Onur Kaymak](https://onurkaymak.com)
 
